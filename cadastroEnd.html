@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Chapter 10 - Example 10-1</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/10-1.js"></script>
+
+    <script type="text/javascript" >
+
+     function carregarCoord(){
+
+
+      document.getElementById("address").value  =
+      document.getElementById("logradouro").value + " "+
+      document.getElementById("numero").value + " "+
+      document.getElementById("bairro").value + " "+
+      document.getElementById("cidade").value + " "+
+      document.getElementById("estado").value + " "+
+      document.getElementById("pais").value + " "+
+      document.getElementById("cep").value ;
+      document.getElementById("addressButton").click();
+
+
+     }
+
+
+     function limparDados(){
+
+           document.getElementById("address").value  = null ;
+	       document.getElementById("logradouro").value ="";
+	       document.getElementById("numero").value ="";
+	       document.getElementById("bairro").value ="";
+	       document.getElementById("cidade").value ="";
+	       document.getElementById("estado").value ="";
+           document.getElementById("pais").value ="";
+           document.getElementById("cep").value ="";
+           document.getElementById("addressButton").click();
+     }
+
+
+     </script>
+     <!--
+
+      Está será melhorada e implementado no cadastrada a agenda
+
+
+     -->
+</head>
+<body>
+
+  <form id="addressForm" action="/">
+  	  <input type="text" name="address" id="address" style="display:none" />
+      <input type="submit" id="addressButton" style="display:none" />
+
+  <table>
+  	<tr>
+  		<td><label for="logradouro">Logradouro:</label></td>
+  		<td><input type="text" name="logradouro" id="logradouro" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="numero">Numero:</label></td>
+  		<td><input type="text" name="numero" id="numero" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="bairro">Bairro:</label></td>
+  		<td><input type="text" name="bairro" id="bairro" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="cidade">Cidade:</label></td>
+  		<td><input type="text" name="cidade" id="cidade" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="estado">Estado:</label></td>
+  		<td><input type="text" name="estado" id="estado" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="pais">Pais:</label></td>
+  		<td><input type="text" name="pais" id="pais" onblur="carregarCoord()" /></td>
+  	</tr>
+  	<tr>
+  		<td><label for="cep">Cep:</label></td>
+  		<td><input type="text" name="cep" id="cep"  /> </td>
+  	<tr>
+
+
+</table>
+	<!--   input type="submit" id="limpar" value="Limpar" onclick="limparDados()" / -->
+
+ </form>
+
+  <div id="map" ></div>
+
+</body>
+</html>
